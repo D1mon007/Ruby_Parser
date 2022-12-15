@@ -6,5 +6,6 @@ module ItemContainer
     module InstanceMethods
     end
 
-    self.included(class_instance)    
+    self.included(class_instance)
+    
 end
