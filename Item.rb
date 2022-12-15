@@ -24,4 +24,5 @@ class Item
     def info()
         yield
     end
+
 end

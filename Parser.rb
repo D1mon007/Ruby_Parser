@@ -1,9 +1,11 @@
 require 'open-uri'
 require 'byebug'
 require 'nokogiri'
+require './Laptop.rb'
 require './Item.rb'
 
 class Parser
+
     def initialize(url)
         @url = url
     end
@@ -24,10 +26,8 @@ class Parser
                 laptop.rating = element.css(".goods-tile__stars").at("svg").attribute("aria-label")
                 laptop.reviews_count = element.css(".goods-tile__stars").text
                 laptop.id = i + 1
-                i = i + 1
-                
-                print i.to_s + " "
-                puts laptop
+                i = i + 1 
+                Laptop.set_item(laptop)
             end
         rescue OpenURI::HTTPError => e
             puts e.message
