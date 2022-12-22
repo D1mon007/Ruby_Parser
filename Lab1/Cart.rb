@@ -11,7 +11,7 @@ class Cart
     def save_to_csv()
         path_csv = './rozetka_all.csv'
         laptop = Laptop.get_All()
-        puts laptop
+        # puts laptop
         begin  
             File.new(path_csv, "w")
             
@@ -40,8 +40,8 @@ class Cart
                         "Id" => product.id,
                         "Name" => product.name,
                         "Price" => product.price,
-                        "Amount" => product.availability, 
-                        "Weight" => product.rating, 
+                        "Availability" => product.availability, 
+                        "Rating" => product.rating, 
                         "Description" => product.description,
                         "Reviews count" => product.reviews_count
                     }
